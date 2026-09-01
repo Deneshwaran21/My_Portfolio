@@ -125,6 +125,22 @@ export const portfolioData = {
   },
   certifications: [
     {
+      id: "cert-nxtwave-developer-foundations",
+      title: "Developer Foundations",
+      issuer: "NxtWave CCBP 4.0 Academy",
+      year: "Aug 2026",
+      skills: ["Git", "Command Line", "Version Control"],
+      url: "https://certificates.ccbp.in/academy/developer-foundations?id=UMQJSJYFSA"
+    },
+    {
+      id: "cert-nxtwave-js-essentials",
+      title: "JavaScript Essentials",
+      issuer: "NxtWave CCBP 4.0 Academy",
+      year: "Aug 2026",
+      skills: ["JavaScript", "ES6+", "Asynchronous JS"],
+      url: "https://certificates.ccbp.in/academy/javascript-essentials?id=XUDWNTJKOY"
+    },
+    {
       id: "cert-nxtwave-dynamic-web",
       title: "Build Your Own Dynamic Web Application",
       issuer: "NxtWave CCBP 4.0 Academy",
@@ -139,14 +155,6 @@ export const portfolioData = {
       year: "Aug 2026",
       skills: ["Python", "Data Structures", "Algorithms"],
       url: "https://certificates.ccbp.in/academy/programming-foundations-with-python?id=BABXQWHYAW"
-    },
-    {
-      id: "cert-nxtwave-js-essentials",
-      title: "JavaScript Essentials",
-      issuer: "NxtWave CCBP 4.0 Academy",
-      year: "Aug 2026",
-      skills: ["JavaScript", "ES6+", "Asynchronous JS"],
-      url: "https://certificates.ccbp.in/academy/javascript-essentials?id=XUDWNTJKOY"
     },
     {
       id: "cert-python-basic",
