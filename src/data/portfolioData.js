@@ -49,40 +49,46 @@ export const portfolioData = {
   ],
   skills: [
     {
+      name: "AI/ML & Deep Learning",
+      category: "Core AI",
+      description: "Production Machine Learning models, Neural Networks, Computer Vision, and Predictive Analytics.",
+      icon: "Brain",
+      items: ["PyTorch", "TensorFlow", "Scikit-Learn", "XGBoost", "OpenCV", "Keras", "CNNs", "NLP", "Feature Engineering", "SHAP / LIME"]
+    },
+    {
       name: "Generative AI & LLMs",
-      category: "AI/ML",
-      description: "LLMs, Prompt Engineering, RAG Architectures, LangChain, LangGraph, OpenAI & Azure OpenAI APIs.",
-      icon: "Sparkles"
-    },
-    {
-      name: "Deep Learning & CV",
-      category: "AI/ML",
-      description: "PyTorch, TensorFlow, Keras, CNNs, Transfer Learning, Computer Vision, OpenCV, NLP.",
-      icon: "Cpu"
-    },
-    {
-      name: "Machine Learning & Stats",
-      category: "AI/ML",
-      description: "Supervised/Unsupervised, Scikit-learn, XGBoost, EDA, Feature Engineering, SHAP, LIME.",
-      icon: "Brain"
+      category: "GenAI",
+      description: "LLM Orchestration, RAG Pipelines, Skill-Based Agents, Prompt Engineering & Vector Retrieval.",
+      icon: "Sparkles",
+      items: ["LLMs", "RAG Systems", "LangChain", "LangGraph", "OpenAI API", "Anthropic Claude", "Ollama", "TF-IDF RAG", "Prompt Engineering"]
     },
     {
       name: "Python & Big Data Stack",
-      category: "Languages",
-      description: "Python, SQL, Pandas, NumPy, PySpark, Matplotlib, Seaborn, Plotly, Apache Kafka.",
-      icon: "Code"
+      category: "Languages & Core",
+      description: "Data processing, statistical modeling, ETL pipelines, and high-performance computing.",
+      icon: "Code",
+      items: ["Python", "SQL", "Pandas", "NumPy", "PySpark", "Apache Kafka", "Matplotlib", "Seaborn", "Plotly"]
     },
     {
-      name: "MLOps & Cloud",
+      name: "MLOps, Cloud & DevOps",
       category: "Deployment",
-      description: "FastAPI, Streamlit, Azure ML, MLflow, Docker, Git, GitHub CI/CD, REST APIs.",
-      icon: "Database"
+      description: "Model serving, RESTful API microservices, containerization, and lifecycle orchestration.",
+      icon: "Cpu",
+      items: ["FastAPI", "Docker", "Docker Compose", "Azure ML", "MLflow", "Git / GitHub CI/CD", "Streamlit", "REST APIs"]
     },
     {
-      name: "Databases & Analytics",
-      category: "Data",
-      description: "Snowflake, MongoDB, PostgreSQL, SQLite, Power BI, Tableau, Excel, Azure Data Factory.",
-      icon: "BarChart3"
+      name: "Databases & Data Architecture",
+      category: "Data Stack",
+      description: "Relational & NoSQL database systems, ORM layers, and data warehousing.",
+      icon: "Database",
+      items: ["PostgreSQL", "Snowflake", "MongoDB", "SQLite", "SQLAlchemy", "Async SQLAlchemy", "Azure Data Factory"]
+    },
+    {
+      name: "Full-Stack & Business Intelligence",
+      category: "Web & Analytics",
+      description: "Modern web application development, interactive AI dashboards, and business reporting.",
+      icon: "BarChart3",
+      items: ["React.js", "Next.js 14", "TypeScript", "Tailwind CSS", "Node.js", "Power BI", "Tableau", "Excel"]
     }
   ],
   experience: [
@@ -204,6 +210,40 @@ export const portfolioData = {
   ],
   projects: [
     {
+      id: "lenny-growth-assistant",
+      title: "Lenny's Growth Assistant — AI Conversational Agent & Artifact Generator",
+      subtitle: "Full-Stack Multi-LLM RAG Assistant & Sandboxed Artifact Viewer",
+      description: "Engineered a full-stack, AI-powered conversational assistant grounded in Lenny's Podcast transcripts with intelligent multi-LLM routing, TF-IDF vector retrieval, and live sandboxed HTML/Markdown artifact rendering.",
+      highlightMetric: "Multi-LLM Failover | Sub-Second RAG | Sandboxed Rendering",
+      technologies: ["FastAPI", "Python 3.11", "React", "TypeScript", "Vite", "PostgreSQL", "Async SQLAlchemy", "Ollama / Llama 3.1", "Anthropic Claude", "OpenAI API", "TF-IDF Vector RAG", "Docker Compose"],
+      githubUrl: "https://github.com/Deneshwaran21/Lenny_Growth_Assistant",
+      liveUrl: "https://github.com/Deneshwaran21/Lenny_Growth_Assistant",
+      detailedFeatures: [
+        "Architected a custom skill router distributing queries across three dedicated AI skill agents: Grounded Podcast Transcript Q&A, Ship 30 for 30 Essay Generation, and Sandboxed HTML/Markdown Artifact Generation",
+        "Implemented provider-agnostic LLM orchestration supporting Anthropic Claude, OpenAI, and local Ollama (Llama 3.1 8B) with per-request UI model toggles and automatic backend failover fallback",
+        "Designed lightweight, high-performance TF-IDF vector retrieval over chunked transcript data, serving precise citations and context without external vector embedding dependencies",
+        "Built a sandboxed iframe Artifact Viewer in React + TypeScript for secure, isolated rendering of dynamically generated interactive HTML dashboards and styled Markdown essays",
+        "Containerized the entire system with Docker Compose orchestrating PostgreSQL database, Ollama local LLM service, FastAPI backend, and Vite React frontend"
+      ]
+    },
+    {
+      id: "voiceflow-ai",
+      title: "VoiceFlow AI — Real-Time Intelligent Voice Assistant & Intent Engine",
+      subtitle: "Full-Stack Speech-to-Speech AI Assistant & Action Dashboard",
+      description: "Built a real-time intelligent voice assistant that transcribes user speech, classifies structured intents, extracts actionable tasks & meetings with priorities and deadlines, and speaks AI responses back using SpeechSynthesis.",
+      highlightMetric: "Real-Time STT/TTS | 5 Intent Categories | Smart Action Extraction",
+      technologies: ["Next.js 14", "TypeScript", "Tailwind CSS", "FastAPI", "Python 3.13", "SQLAlchemy", "Groq / Whisper STT", "Web Audio API", "SpeechSynthesis TTS", "SQLite", "Docker Compose"],
+      githubUrl: "https://github.com/Deneshwaran21/VoiceFlow_AI",
+      liveUrl: "https://github.com/Deneshwaran21/VoiceFlow_AI",
+      detailedFeatures: [
+        "Engineered real-time audio capture and streaming pipeline using Web Audio API and MediaRecorder paired with Groq & Whisper STT APIs for ultra-low latency voice transcription",
+        "Designed an LLM-powered AI orchestration layer classifying speech into 5 core intent categories: CREATE_TASK, CREATE_MEETING, CREATE_REMINDER, ASK_QUESTION, and GENERAL_CONVERSATION",
+        "Built automated action intelligence extraction resolving relative deadlines ('Tomorrow', 'Friday night'), priority levels (High, Medium, Low), and meeting attendee lists directly into database storage",
+        "Integrated browser SpeechSynthesis text-to-speech (TTS) engine creating an end-to-end hands-free speech-to-speech conversational feedback loop",
+        "Developed interactive Action Intelligence Dashboard with Next.js 14 and Tailwind CSS featuring real-time telemetry analytics, task CRUD management, and filterable meeting agenda"
+      ]
+    },
+    {
       id: "contactless-fingerprint-qc",
       title: "Contactless Fingerprint Quality Assessment & Scoring Pipeline",
       subtitle: "Automated Biometric CV & Quality QC System",
@@ -211,7 +251,7 @@ export const portfolioData = {
       highlightMetric: ">95% rejection accuracy | Sub-300ms inference",
       technologies: ["Python", "OpenCV", "NumPy", "Scikit-image", "Streamlit", "FastAPI", "Pandas", "Docker", "Git"],
       githubUrl: "https://github.com/Deneshwaran21",
-      liveUrl: "#",
+      liveUrl: "https://github.com/Deneshwaran21",
       detailedFeatures: [
         "Engineered 5 multi-metric quality assessment algorithms (Blur via Laplacian Variance, Brightness via Grayscale Intensity, Glare via Pixel Thresholding, ROI via Otsu Thresholding, Ridge Clarity via Gabor Filter Response) with weighted composite scoring (0–100)",
         "Implemented dynamic pass/reject decision logic achieving >95% rejection accuracy for poor-quality captures",
@@ -229,7 +269,7 @@ export const portfolioData = {
       highlightMetric: "95.96% validation accuracy",
       technologies: ["PyTorch", "ResNet-50", "Transfer Learning", "FastAPI", "Streamlit", "OpenCV", "NumPy", "Pandas", "Scikit-learn"],
       githubUrl: "https://github.com/Deneshwaran21",
-      liveUrl: "#",
+      liveUrl: "https://github.com/Deneshwaran21",
       detailedFeatures: [
         "Fine-tuned pre-trained ResNet-50 architecture on custom 5-category waste dataset achieving 95.96% validation accuracy",
         "Built and deployed production-grade web application on Streamlit Cloud, integrating FastAPI inference pipeline with modern dark UI for instantaneous preprocessing and high-confidence feedback",

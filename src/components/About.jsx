@@ -104,32 +104,64 @@ export default function About() {
 
         </div>
 
-        {/* Strengths Cards Grid */}
-        <div className="mt-16">
-          <h3 className="text-center text-xs font-mono uppercase tracking-wider text-slate-400 mb-8">
-            Core Competency Areas
-          </h3>
+        {/* Strengths & Skill Matrix Cards Grid */}
+        <div className="mt-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
+            <h3 className="text-2xl font-bold text-slate-100 flex items-center justify-center space-x-2">
+              <Sparkles className="w-5 h-5 text-cyan-400" />
+              <span>Core Competencies & Technical Skills</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-400">
+              Categorized breakdown of technical proficiency, machine learning frameworks, databases, and developer tooling.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {portfolioData.skills.map((skill, index) => (
               <div
                 key={skill.name}
-                className={`glass-card p-6 rounded-2xl transition-all duration-500 transform ${
+                className={`glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all duration-500 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/5 flex flex-col justify-between ${
                   isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="flex items-center justify-between mb-3">
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 shadow-inner">
-                    {iconMap[skill.icon] || <Brain className="w-5 h-5 text-cyan-400" />}
+                <div className="space-y-4">
+                  {/* Category Header */}
+                  <div className="flex items-center justify-between">
+                    <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 shadow-inner">
+                      {iconMap[skill.icon] || <Brain className="w-5 h-5 text-cyan-400" />}
+                    </div>
+                    <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-500/30 font-medium">
+                      {skill.category}
+                    </span>
                   </div>
-                  <span className="text-[11px] font-mono text-cyan-400/80 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20">
-                    {skill.category}
-                  </span>
-                </div>
 
-                <h4 className="text-base font-bold text-slate-100 mb-1">{skill.name}</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">{skill.description}</p>
+                  {/* Title & Description */}
+                  <div>
+                    <h4 className="text-base font-bold text-slate-100">{skill.name}</h4>
+                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">{skill.description}</p>
+                  </div>
+
+                  {/* Granular Skill Chips for HR Scanning */}
+                  {skill.items && (
+                    <div className="pt-2 border-t border-slate-800/60">
+                      <p className="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-2 font-semibold">
+                        Key Technologies:
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {skill.items.map((item, iIdx) => (
+                          <span
+                            key={iIdx}
+                            className="px-2.5 py-1 text-xs font-mono rounded-md bg-slate-900/90 text-cyan-200 border border-slate-700/80 hover:border-cyan-400 hover:bg-cyan-950/50 transition-all flex items-center space-x-1"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                            <span>{item}</span>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
