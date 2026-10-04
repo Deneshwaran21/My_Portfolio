@@ -49,46 +49,60 @@ export const portfolioData = {
   ],
   skills: [
     {
-      name: "AI/ML & Deep Learning",
-      category: "Core AI",
-      description: "Production Machine Learning models, Neural Networks, Computer Vision, and Predictive Analytics.",
-      icon: "Brain",
-      items: ["PyTorch", "TensorFlow", "Scikit-Learn", "XGBoost", "OpenCV", "Keras", "CNNs", "NLP", "Feature Engineering", "SHAP / LIME"]
-    },
-    {
-      name: "Generative AI & LLMs",
-      category: "GenAI",
-      description: "LLM Orchestration, RAG Pipelines, Skill-Based Agents, Prompt Engineering & Vector Retrieval.",
+      name: "Generative AI & NLP",
+      category: "GenAI & LLMs",
+      description: "Production LLM agents, RAG architectures, prompt engineering, speech recognition, and structured output parsing.",
       icon: "Sparkles",
-      items: ["LLMs", "RAG Systems", "LangChain", "LangGraph", "OpenAI API", "Anthropic Claude", "Ollama", "TF-IDF RAG", "Prompt Engineering"]
+      items: ["Generative AI", "Large Language Models (LLMs)", "Prompt Engineering", "Retrieval-Augmented Generation (RAG)", "LangChain", "LangGraph", "AI Agents", "OpenAI API", "Whisper", "Structured Outputs", "Pydantic"]
     },
     {
-      name: "Python & Big Data Stack",
-      category: "Languages & Core",
-      description: "Data processing, statistical modeling, ETL pipelines, and high-performance computing.",
-      icon: "Code",
-      items: ["Python", "SQL", "Pandas", "NumPy", "PySpark", "Apache Kafka", "Matplotlib", "Seaborn", "Plotly"]
+      name: "Machine Learning",
+      category: "Predictive AI",
+      description: "Supervised & unsupervised learning algorithms, deep learning models, computer vision, and model hyperparameter tuning.",
+      icon: "Brain",
+      items: ["Scikit-learn", "XGBoost", "PyTorch", "Regression", "Classification", "Clustering", "Model Evaluation", "Cross-Validation", "Hyperparameter Tuning", "Transfer Learning"]
     },
     {
-      name: "MLOps, Cloud & DevOps",
-      category: "Deployment",
-      description: "Model serving, RESTful API microservices, containerization, and lifecycle orchestration.",
+      name: "Data Science & Statistics",
+      category: "Analytics & Math",
+      description: "Exploratory data analysis (EDA), data cleaning, statistical inference, probability distributions, and A/B testing.",
+      icon: "LineChart",
+      items: ["Pandas", "NumPy", "Exploratory Data Analysis (EDA)", "Data Cleaning", "Data Validation", "Data Preprocessing", "Feature Engineering", "Statistical Analysis", "Probability", "A/B Testing"]
+    },
+    {
+      name: "Deployment & Engineering",
+      category: "MLOps & DevOps",
+      description: "High-performance REST APIs, containerized deployments, microservice architectures, automated testing, and CI/CD.",
       icon: "Cpu",
-      items: ["FastAPI", "Docker", "Docker Compose", "Azure ML", "MLflow", "Git / GitHub CI/CD", "Streamlit", "REST APIs"]
+      items: ["FastAPI", "REST APIs", "Streamlit", "Docker", "Docker Compose", "Git", "GitHub", "CI/CD", "Pytest"]
     },
     {
-      name: "Databases & Data Architecture",
-      category: "Data Stack",
-      description: "Relational & NoSQL database systems, ORM layers, and data warehousing.",
+      name: "Databases & Data Processing",
+      category: "Data Infrastructure",
+      description: "Relational & NoSQL database management, object-relational mapping (ORM), and scalable data processing ETL pipelines.",
       icon: "Database",
-      items: ["PostgreSQL", "Snowflake", "MongoDB", "SQLite", "SQLAlchemy", "Async SQLAlchemy", "Azure Data Factory"]
+      items: ["PostgreSQL", "SQLite", "MongoDB", "SQLAlchemy", "ETL", "Data Processing"]
     },
     {
-      name: "Full-Stack & Business Intelligence",
-      category: "Web & Analytics",
-      description: "Modern web application development, interactive AI dashboards, and business reporting.",
+      name: "Data Visualization & BI",
+      category: "Business Intelligence",
+      description: "Interactive data visualization, business intelligence reporting, executive dashboards, and KPI tracking.",
       icon: "BarChart3",
-      items: ["React.js", "Next.js 14", "TypeScript", "Tailwind CSS", "Node.js", "Power BI", "Tableau", "Excel"]
+      items: ["Matplotlib", "Seaborn", "Plotly", "Microsoft Excel", "Power BI", "Tableau", "Dashboards", "KPI Reporting"]
+    },
+    {
+      name: "Programming & Query Languages",
+      category: "Core Languages",
+      description: "Object-oriented programming, data structures, algorithms, asynchronous logic, and database query optimization.",
+      icon: "Code",
+      items: ["Python", "SQL", "JavaScript", "TypeScript"]
+    },
+    {
+      name: "Frontend Development",
+      category: "Web Frameworks",
+      description: "Modern, responsive frontend web application development, atomic UI components, and dynamic state management.",
+      icon: "Layout",
+      items: ["React", "Next.js", "Node.js", "Tailwind CSS"]
     }
   ],
   experience: [

@@ -18,7 +18,7 @@ export default function About() {
   return (
     <section id="about" ref={ref} className="py-20 md:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-300">
@@ -35,19 +35,18 @@ export default function About() {
 
         {/* About Main Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
+
           {/* Left Narrative Text */}
           <div
-            className={`lg:col-span-7 space-y-6 transition-all duration-700 transform ${
-              isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={`lg:col-span-7 space-y-6 transition-all duration-700 transform ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             <div className="glass-panel rounded-2xl p-6 sm:p-8 space-y-4 border border-slate-800">
               <h3 className="text-lg font-bold text-slate-100 flex items-center space-x-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
-                <span>AI/ML Engineer & Full-Stack Background</span>
+                <span>DATA SCIENCE | MACHINE LEARNING | GENERATIVE AI</span>
               </h3>
-              
+
               <div className="text-slate-300 text-sm sm:text-base leading-relaxed space-y-4">
                 <p>
                   I am a <strong className="text-cyan-300 font-semibold">B.Tech Information Technology graduate</strong> with around 1 year of professional Full-Stack development experience. My technical journey started with software development, but my strong interest in Python, SQL, mathematics, statistics, machine learning and AI has led me to focus my career on Data Science and AI/ML.
@@ -66,7 +65,7 @@ export default function About() {
                   Full-Stack Experience
                 </span>
                 <span className="px-3 py-1 rounded-md bg-cyan-950/60 text-cyan-300 border border-cyan-500/30">
-                  AI/ML & Data Science
+                  DATA SCIENCE | MACHINE LEARNING | GENERATIVE AI
                 </span>
               </div>
             </div>
@@ -74,9 +73,8 @@ export default function About() {
 
           {/* Right Column: User Photo */}
           <div
-            className={`lg:col-span-5 transition-all duration-1000 delay-200 transform ${
-              isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}
+            className={`lg:col-span-5 transition-all duration-1000 delay-200 transform ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              }`}
           >
             {/* User Photo Frame */}
             <div className="glass-panel p-3.5 rounded-2xl border border-slate-700/60 relative overflow-hidden group shadow-2xl shadow-cyan-500/10">
@@ -86,7 +84,7 @@ export default function About() {
                   alt={portfolioData.personal.name}
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
-                
+
                 {/* Gradient vignette overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
 
@@ -120,9 +118,8 @@ export default function About() {
             {portfolioData.skills.map((skill, index) => (
               <div
                 key={skill.name}
-                className={`glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all duration-500 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/5 flex flex-col justify-between ${
-                  isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
+                className={`glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all duration-500 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/5 flex flex-col justify-between ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="space-y-4">
