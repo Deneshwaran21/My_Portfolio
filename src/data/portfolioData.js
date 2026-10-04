@@ -210,20 +210,21 @@ export const portfolioData = {
   ],
   projects: [
     {
-      id: "lenny-growth-assistant",
-      title: "Lenny's Growth Assistant — AI Conversational Agent & Artifact Generator",
-      subtitle: "Full-Stack Multi-LLM RAG Assistant & Sandboxed Artifact Viewer",
-      description: "Engineered a full-stack, AI-powered conversational assistant grounded in Lenny's Podcast transcripts with intelligent multi-LLM routing, TF-IDF vector retrieval, and live sandboxed HTML/Markdown artifact rendering.",
-      highlightMetric: "Multi-LLM Failover | Sub-Second RAG | Sandboxed Rendering",
-      technologies: ["FastAPI", "Python 3.11", "React", "TypeScript", "Vite", "PostgreSQL", "Async SQLAlchemy", "Ollama / Llama 3.1", "Anthropic Claude", "OpenAI API", "TF-IDF Vector RAG", "Docker Compose"],
-      githubUrl: "https://github.com/Deneshwaran21/Lenny_Growth_Assistant",
-      liveUrl: "https://github.com/Deneshwaran21/Lenny_Growth_Assistant",
+      id: "bar-inventory-demand-forecasting",
+      title: "Bar Inventory Demand Forecasting & Par-Level Optimization",
+      subtitle: "Intermittent Demand Forecasting & Inventory Optimization Engine",
+      description: "Built an end-to-end forecasting and inventory recommendation system for a multi-location hotel bar chain (6 bars, 16 product lines), resolving simultaneous stockouts and overstocking through data-driven par levels and periodic-review (R,S) inventory policy.",
+      highlightMetric: "52.5% Cost Reduction | 99.0% Fill Rate",
+      technologies: ["Python", "Pandas", "NumPy", "Scikit-Learn", "SciPy", "Intermittent Demand / Croston", "Lognormal Bias Correction", "Periodic-Review (R,S)", "Jupyter", "Openpyxl", "Pdftotext"],
+      githubUrl: "https://github.com/Deneshwaran21/Bar-Inventory-Demand-Forecasting-Par-Level-Optimization",
+      liveUrl: "https://github.com/Deneshwaran21/Bar-Inventory-Demand-Forecasting-Par-Level-Optimization",
       detailedFeatures: [
-        "Architected a custom skill router distributing queries across three dedicated AI skill agents: Grounded Podcast Transcript Q&A, Ship 30 for 30 Essay Generation, and Sandboxed HTML/Markdown Artifact Generation",
-        "Implemented provider-agnostic LLM orchestration supporting Anthropic Claude, OpenAI, and local Ollama (Llama 3.1 8B) with per-request UI model toggles and automatic backend failover fallback",
-        "Designed lightweight, high-performance TF-IDF vector retrieval over chunked transcript data, serving precise citations and context without external vector embedding dependencies",
-        "Built a sandboxed iframe Artifact Viewer in React + TypeScript for secure, isolated rendering of dynamically generated interactive HTML dashboards and styled Markdown essays",
-        "Containerized the entire system with Docker Compose orchestrating PostgreSQL database, Ollama local LLM service, FastAPI backend, and Vite React frontend"
+        "Data Extraction & Recovery: Parsed a 165-page layout-preserving PDF export into a clean, structured movement ledger (opening/purchase/consumed/closing stock per item per day).",
+        "Diagnostic Statistical Analysis: Conducted ledger-continuity checks, Kruskal-Wallis seasonality tests, and autocorrelation analysis to diagnose intermittent demand, ruling out standard time-series methods in favor of Croston/SBA and intermittent demand models.",
+        "Stockout Bias Correction: Identified ~15% right-censored sales records caused by stockouts and applied a lognormal tail-expectation model to impute true unconstrained demand prior to model training.",
+        "Rolling-Origin Backtesting: Evaluated 9 forecasting benchmarks (naive baselines, moving averages, Croston/SBA, gradient boosting) on a rolling-origin basis evaluated across the actual decision horizon (lead time + review period).",
+        "Inventory Policy Framework: Designed a periodic-review (R,S) inventory policy with ABC segmentation and safety stock sized specifically for compound intermittent demand.",
+        "Day-by-Day Simulation Validation: Simulated the policy against a held-out quarter, boosting fill rate from 97.7% to 99.0%, cutting stockout days from 52 to 24, reducing average inventory from 2,811 to 1,538 ml/item, and slashing total costs from $1,037 to $492 (52.5% reduction)."
       ]
     },
     {
@@ -241,6 +242,23 @@ export const portfolioData = {
         "Built automated action intelligence extraction resolving relative deadlines ('Tomorrow', 'Friday night'), priority levels (High, Medium, Low), and meeting attendee lists directly into database storage",
         "Integrated browser SpeechSynthesis text-to-speech (TTS) engine creating an end-to-end hands-free speech-to-speech conversational feedback loop",
         "Developed interactive Action Intelligence Dashboard with Next.js 14 and Tailwind CSS featuring real-time telemetry analytics, task CRUD management, and filterable meeting agenda"
+      ]
+    },
+    {
+      id: "lenny-growth-assistant",
+      title: "Lenny's Growth Assistant — AI Conversational Agent & Artifact Generator",
+      subtitle: "Full-Stack Multi-LLM RAG Assistant & Sandboxed Artifact Viewer",
+      description: "Engineered a full-stack, AI-powered conversational assistant grounded in Lenny's Podcast transcripts with intelligent multi-LLM routing, TF-IDF vector retrieval, and live sandboxed HTML/Markdown artifact rendering.",
+      highlightMetric: "Multi-LLM Failover | Sub-Second RAG | Sandboxed Rendering",
+      technologies: ["FastAPI", "Python 3.11", "React", "TypeScript", "Vite", "PostgreSQL", "Async SQLAlchemy", "Ollama / Llama 3.1", "Anthropic Claude", "OpenAI API", "TF-IDF Vector RAG", "Docker Compose"],
+      githubUrl: "https://github.com/Deneshwaran21/Lenny_Growth_Assistant",
+      liveUrl: "https://github.com/Deneshwaran21/Lenny_Growth_Assistant",
+      detailedFeatures: [
+        "Architected a custom skill router distributing queries across three dedicated AI skill agents: Grounded Podcast Transcript Q&A, Ship 30 for 30 Essay Generation, and Sandboxed HTML/Markdown Artifact Generation",
+        "Implemented provider-agnostic LLM orchestration supporting Anthropic Claude, OpenAI, and local Ollama (Llama 3.1 8B) with per-request UI model toggles and automatic backend failover fallback",
+        "Designed lightweight, high-performance TF-IDF vector retrieval over chunked transcript data, serving precise citations and context without external vector embedding dependencies",
+        "Built a sandboxed iframe Artifact Viewer in React + TypeScript for secure, isolated rendering of dynamically generated interactive HTML dashboards and styled Markdown essays",
+        "Containerized the entire system with Docker Compose orchestrating PostgreSQL database, Ollama local LLM service, FastAPI backend, and Vite React frontend"
       ]
     },
     {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Award, Cpu, Info, ArrowUpRight, FolderGit2 } from 'lucide-react';
+import { ExternalLink, Award, Cpu, Info, ArrowUpRight, FolderGit2, ChevronLeft, ChevronRight, Grid, Layers } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 import { portfolioData } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
@@ -8,13 +8,31 @@ import { useInView } from '../hooks/useInView';
 export default function Projects() {
   const [ref, isInView] = useInView({ threshold: 0.1 });
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [showAll, setShowAll] = useState(false);
+
+  const itemsPerPage = 2;
+  const totalProjects = portfolioData.projects.length;
+  const totalPages = Math.ceil(totalProjects / itemsPerPage);
+
+  const visibleProjects = showAll
+    ? portfolioData.projects
+    : portfolioData.projects.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
+
+  const nextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  };
+
+  const prevPage = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  };
 
   return (
     <section id="projects" ref={ref} className="py-20 md:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-300">
             <FolderGit2 className="w-3.5 h-3.5" />
             <span>AI & Machine Learning Work</span>
@@ -23,13 +41,67 @@ export default function Projects() {
             Featured <span className="text-gradient-cyan">Projects</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-400">
-            Real-world data science solutions, computer vision models, and telemetry analytics built with Python & PyTorch.
+            Production-grade machine learning models, intermittent demand forecasting engines, and full-stack AI assistants.
           </p>
+        </div>
+
+        {/* Carousel & Navigation Controls Bar */}
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => setShowAll(false)}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all flex items-center space-x-1.5 ${
+                !showAll
+                  ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm'
+                  : 'bg-slate-900/80 text-slate-400 border border-slate-800 hover:text-slate-200'
+              }`}
+            >
+              <Layers className="w-3.5 h-3.5" />
+              <span>Main Featured (2)</span>
+            </button>
+            <button
+              onClick={() => setShowAll(true)}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all flex items-center space-x-1.5 ${
+                showAll
+                  ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm'
+                  : 'bg-slate-900/80 text-slate-400 border border-slate-800 hover:text-slate-200'
+              }`}
+            >
+              <Grid className="w-3.5 h-3.5" />
+              <span>View All ({totalProjects})</span>
+            </button>
+          </div>
+
+          {!showAll && (
+            <div className="flex items-center space-x-3">
+              <span className="text-xs font-mono text-slate-400">
+                Page <span className="text-cyan-300 font-bold">{currentPage + 1}</span> of {totalPages}
+              </span>
+              <div className="flex items-center space-x-1.5">
+                <button
+                  onClick={prevPage}
+                  className="p-2 rounded-xl bg-slate-900 text-slate-300 hover:text-cyan-400 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all shadow-md active:scale-95"
+                  aria-label="Previous Projects"
+                  title="Previous Projects"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={nextPage}
+                  className="p-2 rounded-xl bg-slate-900 text-slate-300 hover:text-cyan-400 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all shadow-md active:scale-95"
+                  aria-label="Next Projects"
+                  title="Next Projects"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Projects Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {portfolioData.projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <div
               key={project.id}
               className={`group glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-6 relative overflow-hidden transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/10 hover:border-cyan-500/40 ${
@@ -125,6 +197,24 @@ export default function Projects() {
             </div>
           ))}
         </div>
+
+        {/* Bottom Pagination Dots */}
+        {!showAll && (
+          <div className="flex items-center justify-center space-x-2 mt-10">
+            {Array.from({ length: totalPages }).map((_, pIdx) => (
+              <button
+                key={pIdx}
+                onClick={() => setCurrentPage(pIdx)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  currentPage === pIdx
+                    ? 'w-8 bg-cyan-400 shadow-lg shadow-cyan-500/50'
+                    : 'w-2 bg-slate-700 hover:bg-slate-500'
+                }`}
+                aria-label={`Go to page ${pIdx + 1}`}
+              />
+            ))}
+          </div>
+        )}
 
       </div>
 
