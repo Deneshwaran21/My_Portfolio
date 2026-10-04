@@ -1,14 +1,14 @@
 export const portfolioData = {
   personal: {
     name: "Deneshwaran M",
-    title: "AI/ML Engineer | Data Science",
-    subtitle: "B.Tech IT Graduate | Full-Stack Foundation | Building Production-Grade Machine Learning & AI Solutions",
+    title: "DATA SCIENCE | MACHINE LEARNING | GENERATIVE AI",
+    subtitle: "B.Tech IT Graduate | Building Production-Grade Machine Learning & AI Solutions | Full-Stack Foundation",
     profileImage: "/profile.jpg",
     email: "reach.deneshwaran@gmail.com",
     phone: "+91 7826936660",
     location: "Madurai, Tamil Nadu",
     shortBio: "AI/ML Engineer specializing in production-grade machine learning models, deep learning, computer vision, Generative AI, RAG architectures, and MLOps.",
-    fullBio: "AI/ML Engineer with hands-on experience in building and deploying production-grade machine learning models. Experienced in supervised/unsupervised learning, deep learning, and Generative AI including LLM integrations and RAG architectures. Proficient in Python, SQL, and statistical modeling, with hands-on MLOps experience using Azure ML, Docker, and MLflow.\n\nStrong full-stack foundation (APIs, databases, cloud) enables seamless end-to-end delivery of AI-powered products from data ingestion to model inference. Passionate about translating complex business problems into data-driven, measurable AI solutions that drive ROI. Currently expanding expertise in Azure AI Stack & MLOps.",
+    fullBio: "Software Engineer transitioning into Data Science and Machine Learning, with 1 year of professional experience and hands-on expertise in Python, SQL, statistics, exploratory data analysis, machine learning, and Generative AI. Experienced in data preprocessing, feature engineering, model development, evaluation, and deployment using Pandas, NumPy, Scikit-learn, PyTorch, XGBoost, FastAPI, Docker, and Streamlit. Built a demand forecasting and inventory optimization system, an LLM-powered voice assistant, and a ResNet-50 image classi er achieving 95.96% validation accuracy. Strong software engineering foundation for building production-ready data and AI applications",
     socials: {
       github: "https://github.com/Deneshwaran21",
       linkedin: "https://www.linkedin.com/in/deneshwaran21/",
